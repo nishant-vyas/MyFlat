@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -90,9 +90,16 @@
             const tableBody = $('#flatGrid tbody');
 
 			tableBody.empty();
-            data.forEach(item => {
 
+			var i = 0;
+
+            data.forEach(item => {
 				if (item.flatNo.startsWith(block)) {
+
+					if (item.alloteeName != null && item.alloteeName != "") {
+						i++;
+					}
+
                     const row = `
 						<tr>
 							<td>${item.flatNo}</td>
@@ -102,7 +109,16 @@
 						</tr>`;
                     tableBody.append(row);
 				}
-            });
+			});
+
+            const row = `
+				<tr>
+					<td>Total: ${i}</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>`;
+            tableBody.append(row);
 		}
 
 		function LoadData() {
