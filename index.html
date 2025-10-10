@@ -50,6 +50,9 @@
 							<li class="page-item">
 								<button class="page-link" id="blockG">G </button>
 							</li>
+							<li class="page-item">
+								<button class="page-link" id="blockG">S </button>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -94,7 +97,7 @@
 			var i = 0;
 
             data.forEach(item => {
-				if (item.flatNo.startsWith(block)) {
+				if (item.flatNo.startsWith(block) || (block == "S" && item.usage == "Shop")) {
 
 					if (item.alloteeName != null && item.alloteeName != "") {
 						i++;
@@ -146,4 +149,3 @@
 	
 </body>
 </html>
-
