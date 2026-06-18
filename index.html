@@ -62,8 +62,6 @@
 						<tr>
 							<th scope="col">FlatNo</th>
 							<th scope="col">Owner Name</th>
-							<th scope="col">Total Amount</th>
-							<th scope="col">Received Amount</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -107,8 +105,6 @@
 						<tr>
 							<td>${item.flatNo}</td>
 							<td>${item.alloteeName}</td>
-							<td>${Number(item.unitConsideration).toLocaleString('en-IN')}</td>
-							<td>${Number(item.receivedAmount).toLocaleString('en-IN')}</td>
 						</tr>`;
                     tableBody.append(row);
 				}
@@ -117,8 +113,6 @@
             const row = `
 				<tr>
 					<td>Total: ${i}</td>
-					<td></td>
-					<td></td>
 					<td></td>
 				</tr>`;
             tableBody.append(row);
@@ -132,7 +126,7 @@
                     contentType: 'application/json',
                     data: JSON.stringify({
                         blockName: 'A+B+C+D+E+F+G',
-                        formThreeId: '440418'
+                        formThreeId: '443147'
                     }),
                     success: function (response) {
                         HandleResponse(response);
